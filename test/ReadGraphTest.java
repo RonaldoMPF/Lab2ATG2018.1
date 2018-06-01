@@ -12,10 +12,12 @@ public class ReadGraphTest {
     Graph<Integer> graph1;
     Graph<Integer> graph2;
     Graph<Integer> weightedGraph1;
+    Graph<Integer> disconnectedGraph;
     String graph1Path = new File("data/graph1.txt").getAbsolutePath();
     String graph2Path = new File("data/graph2.txt").getAbsolutePath();
     String weightedGraphPath = new File("data/weightedGraph.txt").getAbsolutePath();
     String notAGraphPath = new File("data/notAGraph.txt").getAbsolutePath();
+    String disconnectedGraphPath = new File("data/disconnected.txt").getAbsolutePath();
 
     @Before
     public void setUp() throws Exception {
@@ -59,5 +61,15 @@ public class ReadGraphTest {
                     + "<graph size number>\n"
                     + "<source> <destination>");
         }
+    }
+
+    @Test
+    public void readDisconnectedGraph(){
+        try {
+            disconnectedGraph.readGraph(disconnectedGraphPath);
+        }catch (Exception e){
+            Assert.fail();
+        }
+
     }
 }
