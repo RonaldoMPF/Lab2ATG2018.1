@@ -14,7 +14,7 @@ public class ReadGraphTest {
     Graph<Integer> weightedGraph1;
     String graph1Path = new File("data/graph1.txt").getAbsolutePath();
     String graph2Path = new File("data/graph2.txt").getAbsolutePath();
-    String weightedGraphPath = new File("data/weightedGraph1.txt").getAbsolutePath();
+    String weightedGraphPath = new File("data/weightedGraph.txt").getAbsolutePath();
     String notAGraphPath = new File("data/notAGraph.txt").getAbsolutePath();
 
     @Before
@@ -49,7 +49,7 @@ public class ReadGraphTest {
     }
 
     @Test
-    public void notAGraphTest(){
+    public void readInvalidGraphTest(){
         try{
             graph1.readGraph(notAGraphPath);
             Assert.fail();
