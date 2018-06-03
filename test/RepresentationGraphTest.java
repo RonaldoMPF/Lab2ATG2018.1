@@ -29,31 +29,34 @@ public class RepresentationGraphTest {
     @Test
     public void AdjListTest(){
         try {
+        	System.out.println(graph1.graphRepresentation(RepresentationType.ADJACENCYLIST));
             Assert.assertEquals(graph1.graphRepresentation(RepresentationType.ADJACENCYLIST), "1 - 2 5\n" +
                     "2 - 1 5\n" +
-                    "5 - 2 3 4 1\n" +
+                    "3 - 5\n" +
                     "4 - 5\n" +
-                    "3 - 5\n");
+                    "5 - 2 3 4 1\n");
         } catch (Exception e) {
             Assert.fail();
         }
         try {
-            Assert.assertEquals(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST), "30 - 10 20 60\n" +
-                    "20 - 40 10 30 60 50\n" +
+        	System.out.println(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST));
+            Assert.assertEquals(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST), "50 - 20 70\n" +
+                    "30 - 10 20 60\n" +
                     "10 - 40 30 20\n" +
-                    "60 - 20 30 70\n" +
-                    "50 - 20 70\n" +
                     "70 - 60 50\n" +
+                    "60 - 20 30 70\n" +
+                    "20 - 40 10 30 60 50\n" +
                     "40 - 10 20\n");
         } catch (Exception e) {
             Assert.fail();
         }
         try {
-            Assert.assertEquals(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST), "1 - 2(0.1) 5(1.0)\n" +
+        	System.out.println(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST));
+            Assert.assertEquals(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST), "3 - 5(5.0) 4(-9.5)\n" +
+                    "4 - 3(-9.5) 5(2.3)\n" +
+                    "1 - 2(0.1) 5(1.0)\n" +
                     "2 - 1(0.1) 5(0.2)\n" +
-                    "5 - 2(0.2) 3(5.0) 4(2.3) 1(1.0)\n" +
-                    "3 - 5(5.0) 4(-9.5)\n" +
-                    "4 - 3(-9.5) 5(2.3)\n");
+                    "5 - 2(0.2) 3(5.0) 4(2.3) 1(1.0)\n");
         } catch (Exception e) {
             Assert.fail();
         }
@@ -63,6 +66,7 @@ public class RepresentationGraphTest {
     @Test
     public void AdjMatrixTest(){
         try {
+        	System.out.println(graph1.graphRepresentation(RepresentationType.ADJACENCYMATRIX));
             Assert.assertEquals(graph1.graphRepresentation(RepresentationType.ADJACENCYMATRIX), "  1 2 3 4 5 \n" +
                     "1 0 1 0 0 1 \n" +
                     "2 1 0 0 0 1 \n" +
@@ -74,6 +78,7 @@ public class RepresentationGraphTest {
         }
 
         try {
+        	System.out.println(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYMATRIX));
             Assert.assertEquals(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYMATRIX), "  1 2 3 4 5 \n" +
                     "1 0 0.1 0 0 1 \n" +
                     "2 0.1 0 0 0 0.2 \n" +
