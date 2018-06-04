@@ -72,15 +72,43 @@ public class ReadGraphTest {
     }
     
     @Test
-    public void readInvalidFileGraphTest(){
+    public void readInvalidWeightedGraphTest(){
         try{
-            randomFileGraph.readGraph(randomFileGraphPath);
+            randomFileGraph.readWeightedGraph(notAGraphPath);
             Assert.fail();
         } catch (Exception e) {
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
                     + "The formatting should be:\n"
                     + "<graph size number>\n"
+                    + "<source> <destination> <weight>");
+        }
+    }
+    
+    @Test
+    public void readInvalidFileGraphTest(){
+        try{
+            randomFileGraph.readGraph(randomFileGraphPath);
+            Assert.fail();
+        } catch (Exception e) {
+        	e.printStackTrace();
+            assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
+                    + "The formatting should be:\n"
+                    + "<graph size number>\n"
                     + "<source> <destination>");
+        }
+    }
+    
+    @Test
+    public void readInvalidFileWeitghtedGraphTest(){
+        try{
+            randomFileGraph.readWeightedGraph(randomFileGraphPath);
+            Assert.fail();
+        } catch (Exception e) {
+        	e.printStackTrace();
+            assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
+                    + "The formatting should be:\n"
+                    + "<graph size number>\n"
+                    + "<source> <destination> <weight>");
         }
     }
 
