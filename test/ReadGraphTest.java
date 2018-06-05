@@ -43,13 +43,13 @@ public class ReadGraphTest {
         try{
             graph1.readGraph(graph1Path);
         }catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading this graph");
         }
 
         try{
             graph2.readGraph(graph2Path);
         }catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading this graph");
         }
 
         assertEquals(5, graph1.getEdgeNumber());
@@ -65,7 +65,7 @@ public class ReadGraphTest {
         try{
             weightedGraph1.readWeightedGraph(weightedGraphPath);
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading this graph");
         }
 
         assertEquals(6, weightedGraph1.getEdgeNumber());
@@ -77,7 +77,7 @@ public class ReadGraphTest {
     public void readInvalidGraphTest(){
         try{
             randomFileGraph.readGraph(notAGraphPath);
-            Assert.fail();
+            Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
                     + "The formatting should be:\n"
@@ -91,7 +91,7 @@ public class ReadGraphTest {
     public void readInvalidWeightedGraphTest(){
         try{
             randomFileGraph.readWeightedGraph(notAGraphPath);
-            Assert.fail();
+            Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
                     + "The formatting should be:\n"
@@ -104,7 +104,7 @@ public class ReadGraphTest {
     public void readInvalidFileGraphTest(){
         try{
             randomFileGraph.readGraph(randomFileGraphPath);
-            Assert.fail();
+            Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
         	e.printStackTrace();
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
@@ -118,7 +118,7 @@ public class ReadGraphTest {
     public void readInvalidFileWeitghtedGraphTest(){
         try{
             randomFileGraph.readWeightedGraph(randomFileGraphPath);
-            Assert.fail();
+            Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
         	e.printStackTrace();
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
@@ -133,7 +133,7 @@ public class ReadGraphTest {
         try {
             disconnectedGraph.readGraph(disconnectedGraphPath);
         }catch (Exception e){
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading this graph");
         }
 
         assertEquals(2, disconnectedGraph.getEdgeNumber());
@@ -146,7 +146,7 @@ public class ReadGraphTest {
         try {
             emptyGraph.readGraph(emptyGraphPath);
         }catch (Exception e){
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading this graph");
         }
 
     }
@@ -156,7 +156,7 @@ public class ReadGraphTest {
         try {
             giantGraph.readGraph(giantGraphPath);
         }catch (Exception e){
-            Assert.fail();
+            Assert.fail("Should not throw an exception while reading the graph");
         }
 
         assertEquals(999, giantGraph.getVertexNumber());

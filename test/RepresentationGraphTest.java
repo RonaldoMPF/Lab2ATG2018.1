@@ -46,7 +46,7 @@ public class RepresentationGraphTest {
                     "4 - 5\n" +
                     "5 - 2 3 4 1\n");
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception");
         }
         try {
         	System.out.println(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST));
@@ -58,7 +58,7 @@ public class RepresentationGraphTest {
                     "20 - 40 10 30 60 50\n" +
                     "40 - 10 20\n");
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception");
         }
         
         try {
@@ -69,7 +69,7 @@ public class RepresentationGraphTest {
                     "2 - 1(0.1) 5(0.2)\n" +
                     "5 - 2(0.2) 3(5.0) 4(2.3) 1(1.0)\n");
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception");
         }
         
         try {
@@ -79,7 +79,7 @@ public class RepresentationGraphTest {
         			"2 - \n" +
         			"4 - \n");
         }catch (Exception e) {
-        	Assert.fail();
+        	Assert.fail("Should not throw an exception");
     	}
         
         
@@ -91,7 +91,7 @@ public class RepresentationGraphTest {
         			"4 - 3\n" +
         			"5 - \n");
         }catch (Exception e) {
-        	Assert.fail();
+        	Assert.fail("Should not throw an exception");
     	}
 
     }
@@ -108,7 +108,7 @@ public class RepresentationGraphTest {
                     "4 0 0 -9.5 0 2.3 \n" +
                     "5 1 0.2 5 2.3 0 \n");
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception");
         }
     	
         try {
@@ -120,7 +120,7 @@ public class RepresentationGraphTest {
                     "4 0 0 0 0 1 \n" +
                     "5 1 1 1 1 0 \n");
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Should not throw an exception");
         }
 
         
