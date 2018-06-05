@@ -39,7 +39,6 @@ public class RepresentationGraphTest {
     @Test
     public void AdjListTest(){
         try {
-        	System.out.println(graph1.graphRepresentation(RepresentationType.ADJACENCYLIST));
             Assert.assertEquals(graph1.graphRepresentation(RepresentationType.ADJACENCYLIST), "1 - 2 5\n" +
                     "2 - 1 5\n" +
                     "3 - 5\n" +
@@ -49,7 +48,6 @@ public class RepresentationGraphTest {
             Assert.fail("Should not throw an exception");
         }
         try {
-        	System.out.println(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST));
             Assert.assertEquals(graph2.graphRepresentation(RepresentationType.ADJACENCYLIST), "50 - 20 70\n" +
                     "30 - 10 20 60\n" +
                     "10 - 40 30 20\n" +
@@ -62,7 +60,6 @@ public class RepresentationGraphTest {
         }
         
         try {
-        	System.out.println(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST));
             Assert.assertEquals(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST), "3 - 5(5.0) 4(-9.5)\n" +
                     "4 - 3(-9.5) 5(2.3)\n" +
                     "1 - 2(0.1) 5(1.0)\n" +
@@ -73,7 +70,6 @@ public class RepresentationGraphTest {
         }
         
         try {
-        	System.out.println(noEdgeGraph.graphRepresentation(RepresentationType.ADJACENCYLIST));
         	Assert.assertEquals(noEdgeGraph.graphRepresentation(RepresentationType.ADJACENCYLIST), "1 - \n" +
         			"3 - \n" +
         			"2 - \n" +
@@ -84,7 +80,6 @@ public class RepresentationGraphTest {
         
         
         try {
-        	System.out.println(disconnectedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST));
         	Assert.assertEquals(disconnectedGraph.graphRepresentation(RepresentationType.ADJACENCYLIST), "1 - 2\n" +
         			"3 - 4\n" +
         			"2 - 1\n" +
@@ -100,7 +95,6 @@ public class RepresentationGraphTest {
     public void AdjMatrixTest(){
     	
     	try {
-        	System.out.println(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYMATRIX));
             Assert.assertEquals(weightedGraph.graphRepresentation(RepresentationType.ADJACENCYMATRIX), "  1 2 3 4 5 \n" +
                     "1 0 0.1 0 0 1 \n" +
                     "2 0.1 0 0 0 0.2 \n" +
@@ -112,7 +106,6 @@ public class RepresentationGraphTest {
         }
     	
         try {
-        	System.out.println(graph1.graphRepresentation(RepresentationType.ADJACENCYMATRIX));
             Assert.assertEquals(graph1.graphRepresentation(RepresentationType.ADJACENCYMATRIX), "  1 2 3 4 5 \n" +
                     "1 0 1 0 0 1 \n" +
                     "2 1 0 0 0 1 \n" +

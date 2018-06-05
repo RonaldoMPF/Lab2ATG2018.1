@@ -53,13 +53,6 @@ public class ConnectedAndShortestPathTest {
 
     }
 
-//    @Test
-//    public void isConnectedTest(){
-//        Assert.assertFalse(graph1.connected());
-//        Assert.assertFalse(graph2.connected());
-//        Assert.assertFalse(weightedGraph.connected());
-//    }
-
     @Test
     public void shortestPathTest(){
         
