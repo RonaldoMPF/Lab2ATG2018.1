@@ -15,7 +15,9 @@ public class ReadGraphTest {
     Graph<Integer> disconnectedGraph;
     Graph<Integer> emptyGraph;
     Graph<Integer> randomFileGraph;
-    
+    Graph<Integer> giantGraph;
+
+
     String graph1Path = new File("data/graph1.txt").getAbsolutePath();
     String graph2Path = new File("data/graph2.txt").getAbsolutePath();
     String weightedGraphPath = new File("data/weightedGraph.txt").getAbsolutePath();
@@ -23,6 +25,7 @@ public class ReadGraphTest {
     String disconnectedGraphPath = new File("data/disconnectedGraph.txt").getAbsolutePath();
     String emptyGraphPath = new File("data/emptyGraph.txt").getAbsolutePath();
     String randomFileGraphPath = new File("data/randomFile.txt").getAbsolutePath();
+    String giantGraphPath = new File("data/giantGraph.txt").getAbsolutePath();
 
     @Before
     public void setUp() throws Exception {
@@ -32,6 +35,7 @@ public class ReadGraphTest {
         disconnectedGraph =  new Graph<>();
         emptyGraph = new Graph<>();
         randomFileGraph = new Graph<>();
+        giantGraph = new Graph<>();
     }
 
     @Test
@@ -47,6 +51,13 @@ public class ReadGraphTest {
         }catch (Exception e) {
             Assert.fail();
         }
+
+        assertEquals(5, graph1.getEdgeNumber());
+        assertEquals(5, graph1.getVertexNumber());
+
+        assertEquals(7, graph1.getEdgeNumber());
+        assertEquals(10, graph1.getVertexNumber());
+
     }
 
     @Test
@@ -56,6 +67,10 @@ public class ReadGraphTest {
         } catch (Exception e) {
             Assert.fail();
         }
+
+        assertEquals(6, weightedGraph1.getEdgeNumber());
+        assertEquals(5, weightedGraph1.getVertexNumber());
+
     }
 
     @Test
@@ -69,6 +84,7 @@ public class ReadGraphTest {
                     + "<graph size number>\n"
                     + "<source> <destination>");
         }
+
     }
     
     @Test
@@ -113,17 +129,20 @@ public class ReadGraphTest {
     }
 
     @Test
-    public void readDisconnectedGraph(){
+    public void readDisconnectedGraphTest(){
         try {
             disconnectedGraph.readGraph(disconnectedGraphPath);
         }catch (Exception e){
             Assert.fail();
         }
 
+        assertEquals(2, disconnectedGraph.getEdgeNumber());
+        assertEquals(4, disconnectedGraph.getVertexNumber());
+
     }
     
     @Test
-    public void readEmptyGraph(){
+    public void readEmptyGraphTest(){
         try {
             emptyGraph.readGraph(emptyGraphPath);
         }catch (Exception e){
@@ -131,4 +150,19 @@ public class ReadGraphTest {
         }
 
     }
+
+    @Test
+    public void readGiantGraphTest(){
+        try {
+            giantGraph.readGraph(giantGraphPath);
+        }catch (Exception e){
+            Assert.fail();
+        }
+
+        assertEquals(999, giantGraph.getVertexNumber());
+        assertEquals(998, giantGraph.getEdgeNumber());
+        assertEquals(1.199799, giantGraph.getMeanEdge(), 0.0001);
+    }
+
+
 }
