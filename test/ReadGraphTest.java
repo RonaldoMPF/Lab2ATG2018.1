@@ -106,7 +106,7 @@ public class ReadGraphTest {
             randomFileGraph.readGraph(randomFileGraphPath);
             Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
-        	e.printStackTrace();
+  
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
                     + "The formatting should be:\n"
                     + "<graph size number>\n"
@@ -120,7 +120,7 @@ public class ReadGraphTest {
             randomFileGraph.readWeightedGraph(randomFileGraphPath);
             Assert.fail("Should throw an exception while reading this graph");
         } catch (Exception e) {
-        	//e.printStackTrace();
+        
             assertEquals(e.getMessage(), "Invalid formatting in input file:\n"
                     + "The formatting should be:\n"
                     + "<graph size number>\n"
