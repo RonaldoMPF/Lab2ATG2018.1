@@ -62,7 +62,8 @@ public class ConnectedAndShortestPathTest {
 
     @Test
     public void shortestPathTest(){
-        Assert.assertEquals(graph1.shortestPath(vertex1G1, vertex2G1), "1 5 4");
+        
+    	Assert.assertEquals(graph1.shortestPath(vertex1G1, vertex2G1), "1 5 4");
         Assert.assertEquals(graph2.shortestPath(vertex2G1, vertex2G2), "10 30 60 70");
     	
     	
